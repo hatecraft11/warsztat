@@ -7,7 +7,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800&amp;subset=latin-ext"
+          rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -31,13 +32,79 @@
                         <li><a href="">Historia</a></li>
                     </ul>
                 </li>
-                <li><a href="">Galeria</a></li>
-                <li><a href="">Kontakt</a></li>
+                <li>
+                    <a href="">Kontakt</a>
+                    <ul class="page-nav-sublist">
+                        <li><a href="">Aktualności</a></li>
+                        <li><a href="">Nasz team</a></li>
+                        <li><a href="">Historia</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Galeria</a>
+                    <ul class="page-nav-sublist">
+                        <li><a href="">Nasze prace</a></li>
+                        <li><a href="">Nasz team</a></li>
+                        <li><a href="">Historia</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>
 </header>
 
+<div class="main-slider-bg">
+    <div class="container">
+        <div class="main-slider" ID="mainSlider">
+            <button type="button" class="main-slider-prev">
+                &lt;
+            </button>
+            <button type="button" class="main-slider-next">
+                &gt;
+            </button>
+            <div class="main-slider-slides">
+                <div class="main-slider-slide active">
+                    <h2 class="main-slider-slide-title">
+                    </h2>
+
+                </div>
+                <div class="main-slinder-slide">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-contact">
+    <div class="container">
+        <h2 class="section-title">
+            Kontakt
+        </h2>
+        <form class="form clearfix" action="" method="post">
+            <div class="form-left">
+                <div class="form-row">
+                    <label for="forName" class="visuallyhidden">Imię</label>
+                    <input type="text" name="" id="forName" placeholder="Imię">
+                </div>
+                <div class="form-row">
+                    <label for="forEmail" class="visuallyhidden">Email</label>
+                    <input type="email" name="" id="forEmail" placeholder="Email">
+                </div>
+                <div class="form-row">
+                    <label for="formMsg" class="visuallyhidden">Wiadomość</label>
+                    <textarea name="message" id="formMsg" placeholder="Wiadomość"></textarea>
+                </div>
+            </div>
+            <div class="form-right">
+                <div class="form-addon"></div>
+                <label class="form-checkbox">
+                    <input type="checkbox">
+                    <span class="form-checkbox-mark"></span>
+                    Zgadzam się na przetwarzanie danych osobowych
+                </label>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 </body>

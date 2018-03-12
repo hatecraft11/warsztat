@@ -2,15 +2,13 @@
     --color: #27C7AB;
 }
 
-
-
 * {
     box-sizing: border-box;
 }
 
 .container {
-    width:1150px;
-    margin:0 auto;
+    width: 1150px;
+    margin: 0 auto;
 }
 
 .clearfix:after {
@@ -18,18 +16,38 @@
     display: block;
     clear: both;
 }
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
 
 body {
     font-family: 'Raleway', sans-serif;
 }
 
+/* -------------------------------------------- */
+/* main header */
+/* -------------------------------------------- */
 .page-header {
     background: #000;
     height: 40px;
+    z-index:10;
+    position: relative;
 }
+
+
+
 .page-logo {
     float: left;
 }
+
 .page-logo__link {
     color: #fff;
     text-transform: uppercase;
@@ -39,76 +57,287 @@ body {
     line-height: 40px;
     display: block;
 }
+
 .page-logo__link span {
     color: var(--color);
 }
+
 .page-nav {
-    float:right;
+    float: right;
 }
-.page-nav-list {}
+
+.page-nav-list {
+}
+
 .page-nav-list li {
     float: left;
     position: relative;
 }
+
 .page-nav-list a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
     line-height: 40px;
-    padding:0 25px;
+    padding: 0 25px;
     display: block;
 }
-.page-nav-list a:hover{
+
+.page-nav-list a:hover {
     color: var(--color);
 }
-.page-nav-list li:hover > a{
+
+.page-nav-list li:hover > a {
     color: var(--color);
 }
-.page-nav-sublist{
+
+.page-nav-sublist {
     position: absolute;
-    background: black;
     top: 55px;
     left: 50%;
-    transform:translate(-50%,0);
+    transform: translate(-50%, 0);
+    background: #000;
     opacity: 0;
-    transition: 0.5s all;
     visibility: hidden;
+    transition: 0.5s all;
     padding: 10px 0;
 }
 
-.page-nav-sublist li {
-    float: none;
-}
-.page-nav-list li:hover .page-nav-sublist{
-    opacity: 1;
+.page-nav-list li:hover .page-nav-sublist {
     visibility: visible;
+    opacity: 1;
 }
-.page-nav-sublist:before{
+
+.page-nav-sublist:before {
     content: '';
     width: 20px;
     height: 20px;
-    background: black;
+    background: #000;
     display: block;
     transform: translate(-50%, -50%) rotate(45deg);
     position: absolute;
     left: 50%;
     top: 0;
 }
-.page-nav-sublist:after{
+
+.page-nav-sublist:after {
     content: '';
-    background:transparent;
+    background: transparent;
     height: 15px;
     width: 100%;
     display: block;
     position: absolute;
     left: 0;
-    top: -30px;
+    top: -15px;
 }
+
+.page-nav-sublist li {
+    float: none;
+}
+
 .page-nav-sublist a {
     font-weight: normal;
     text-transform: none;
     line-height: 30px;
+    white-space: nowrap;
 }
+
+/* -------------------------------------------- */
+/* main slider */
+/* -------------------------------------------- */
+.main-slider-bg {
+    background: linear-gradient(#fff, #ccc);
+    height: 500px;
+}
+
+.main-slider-bg .container {
+    height: 100%;
+}
+
+.main-slider {
+    height: 100%;
+    position: relative;
+}
+
+.main-slider-prev,
+.main-slider-next {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    font-size: 70px;
+    border: 0;
+    background: transparent;
+    color: var(--color);
+    cursor: pointer;
+}
+
+.main-slider-prev:focus,
+.main-slider-next:focus,
+.main-slider-prev:hover,
+.main-slider-next:hover {
+    outline: none;
+    color: #333;
+}
+
+.main-slider-next {
+    left: auto;
+    right: 0;
+}
+
+.main-slider-slides {
+    height: 100%;
+    margin: 0 100px;
+    position: relative;
+}
+
+.main-slider-slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 10rem;
+    opacity: 0;
+}
+
+.main-slider-slide.active {
+    opacity: 1;
+}
+
+.main-slider-slide-title {
+    position: relative;
+    top: -30px;
+    opacity: 0;
+    transition: 3s all;
+    background: url("../images/black_chair.png");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.main-slider-slide-image{
+    position: relative;
+    font-size: 25px;
+
+
+}
+
+
+.main-slider-slide.active .main-slider-slide-title {
+    top: 0;
+    opacity: 1;
+}
+/*
+Main contact
+ */
+
+.main-contact{
+}
+/*
+Form
+*/
+.form{}
+.form-addon{
+    height: 190px;
+    background: url(../images/red_chair.png);
+    background-repeat: no-repeat;
+    background-position: center -22px;
+    margin-bottom: 45px;
+}
+.form-row{
+    margin-bottom: 25px;
+}
+.form-left{
+    width: 640px;
+    float: left;
+}
+.form-right{
+    width: 340px;
+    float:right ;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+    height:65px;
+    width:100%;
+    display: block;
+    border:1px solid var(--color);
+    font-size: 25px;
+    font-weight: 300;
+    padding:0 15px;
+    font-family: 'Raleway', sans-serif;
+    color:#222;
+}
+.form textarea {
+    padding:15px;
+    height:150px;
+    resize: none;
+}
+.form input[type="text"]:focus,
+.form input[type="email"]:focus,
+.form textarea:focus {
+    outline:none;
+    box-shadow:inset 0 0 0 1px var(--color);
+}
+
+.form ::-webkit-input-placeholder {
+    color: #ccc;
+}
+.form ::-moz-placeholder {
+    color: #ccc;
+}
+.form :-ms-input-placeholder {
+    color: #ccc;
+}
+.form :-moz-placeholder {
+    color: #ccc;
+}
+
+.form-checkbox {
+    display: block;
+    position: relative;
+    padding-left:60px;
+    padding-top:8px;
+    min-height:50px;
+    color:#aaa;
+}
+.form-checkbox input[type="checkbox"] {
+    position: absolute;
+    left:-999999px;
+}
+.form-checkbox-mark {
+    position: absolute;
+    left:0;
+    top:0;;
+    width:50px;
+    height:50px;
+    border:1px solid var(--color);
+    display: inline-block;
+    vertical-align: top;
+}
+.form-checkbox input[type="checkbox"] + .form-checkbox-mark:before {
+    content:'';
+    width:47px;
+    height:50px;
+    position: absolute;
+    left:0;
+    top:0;
+    background: url(../images/form_ok.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity:0;
+    transition: 0.5s all;
+    transform: scale(0.5);
+}
+.form-checkbox input[type="checkbox"]:checked + .form-checkbox-mark:before {
+    opacity:1;
+    transform: scale(1);
+}
+
+
 
